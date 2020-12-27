@@ -8,7 +8,7 @@ const anaSayfa = function (req, res, next) {
       siteAd: "Mekan32",
       aciklama: "Isparta civarındaki mekanları keşfedin!",
     },
-    footer:"merve sezer",
+    footer:"Kerem Kocaekiz",
     mekanlar: [
       {
         ad: "Starbucks",
@@ -54,7 +54,7 @@ const mekanBilgisi = function (req, res, next) {
   res.render("mekan-detay", {
     baslik: "Mekan Bilgisi",
     sayfaBaslik: "Starbucks",
-    footer:"merve sezer",
+    footer:"Kerem Kocaekiz",
     mekanBilgisi: {
       ad: "Starbucks",
       adres: "Centrum Garden",
