@@ -8,7 +8,7 @@ const anaSayfa = function (req, res, next) {
       siteAd: "Mekan32",
       aciklama: "Isparta civarındaki mekanları keşfedin!",
     },
-    footer:"Kerem Kocaekiz",
+    footer: "Kerem Kocaekiz",
     mekanlar: [
       {
         ad: "Starbucks",
@@ -25,27 +25,26 @@ const anaSayfa = function (req, res, next) {
         mesafe: "5km",
       },
       {
-        ad: "Pideci",
-        adres: "Iyaş AVM",
-        puan: "9",
-        imkanlar: ["pide", "künefe", "içecek"],
-        mesafe: "5km",
-      },
-      {
-        ad: "Burger King",
-        adres: "Iyaş AVM",
-        puan: "7",
-        imkanlar: ["hamburger", "içecek"],
-        mesafe: "5km",
-      },
-      {
-        ad: "MC Donalds",
-        adres: "Iyaş AVM Yanı",
-        puan: "10",
-        imkanlar: ["hamburger", "pizza", "içecek"],
+        ad: "Sarımsak Gurme",
+        adres: "Centrum Garden",
+        puan: "5",
+        imkanlar: ["Yemek", "Tatlı", "İçecek"],
         mesafe: "10km",
       },
-
+      {
+        ad: "Iyaş Bulvar",
+        adres: "Iyaş Bulvar",
+        puan: "2",
+        imkanlar: ["Alışveriş", "Eğlence", "Yemek"],
+        mesafe: "8km",
+      },
+      {
+        ad: "Kaktüs Cadde",
+        adres: "Iyaş AVM",
+        puan: "5",
+        imkanlar: ["Yemek", "Tatlı", "İçecek"],
+        mesafe: "2km",
+      },
     ],
   });
 };
@@ -54,7 +53,7 @@ const mekanBilgisi = function (req, res, next) {
   res.render("mekan-detay", {
     baslik: "Mekan Bilgisi",
     sayfaBaslik: "Starbucks",
-    footer:"Kerem Kocaekiz",
+    footer: "Kerem Kocaekiz",
     mekanBilgisi: {
       ad: "Starbucks",
       adres: "Centrum Garden",
@@ -87,7 +86,7 @@ const mekanBilgisi = function (req, res, next) {
           yorumYapan: "Kerem Kocaekiz",
           puan: "3",
           tarih: "1 Aralık 2020",
-          yorumMetni: "Kahveleri Çok Pahalı",
+          yorumMetni: "Kahveleri Çok Kötü",
         },
       ],
     },

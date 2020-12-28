@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 
-var dbURI = "mongodb+srv://mekan32:mekan32@mekan32.ieshr.mongodb.net/mekan32?retryWrites=true&w=majority";
+var dbURI = "mongodb+srv://mekan32:mekan32@mekan32.qumvi.mongodb.net/mekan32?retryWrites=true&w=majority";
 
 mongoose.connect(dbURI, { useNewUrlParser: true });
 
@@ -22,4 +22,23 @@ kapat = function (msg, callback) {
     callback();
   });
 };
-require('./mekansema'); 
+
+process.once("SIGUSR2", function () {
+  kapat("Nodemon kapatıldı\n", function () {
+    process.kill(process.pid, "SIGUSR2");
+  });
+});
+
+process.on("SIGINT", function () {
+  kapat("Uygulama kapatıldı\n", function () {
+    process.exit(0);
+  });
+});
+
+process.on("SIGTERM", function () {
+  kapat("Heroku kapatıldı\n", function () {
+    process.exit(0);
+  });
+});
+
+require("./mekansema");
