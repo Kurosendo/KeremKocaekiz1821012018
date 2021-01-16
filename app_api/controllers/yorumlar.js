@@ -6,6 +6,7 @@ const cevapOlustur = function (res, status, content) {
 };
 
 const yorumEkle = function (req, res) {
+  console.log("Yorum Ekle")
   var mekanid = req.params.mekanid;
   if (mekanid) {
     Mekan.findById(mekanid)
@@ -157,13 +158,16 @@ var yorumOlustur = function (req, res, gelenMekan) {
 
 var sonPuanHesapla = function (gelenMekan) {
   var i, yorumSayisi, ortalamaPuan, toplamPuan;
+  console.log("deneme");
   if (gelenMekan.yorumlar && gelenMekan.yorumlar.length > 0) {
-    yorumSsayisi = gelenMekan.yorumlar.length;
+    yorumSayisi = gelenMekan.yorumlar.length;
     toplamPuan = 0;
     for (i = 0; i < yorumSayisi; i++) {
       toplamPuan = toplamPuan + gelenMekan.yorumlar[i].puan;
     }
+    console.log(toplamPuan);
     ortalamaPuan = Math.round(toplamPuan / yorumSayisi);
+    console.log(ortalamaPuan);
     gelenMekan.puan = ortalamaPuan;
     gelenMekan.save(function (hata) {
       if (hata) {
@@ -174,6 +178,7 @@ var sonPuanHesapla = function (gelenMekan) {
 };
 
 var ortalamaPuanGuncelle = function (mekanid) {
+  console.log("Ortalama Puan Güncelle");
   Mekan.findById(mekanid)
     .select("puan yorumlar")
     .exec(function (hata, mekan) {

@@ -1,8 +1,9 @@
 var mongoose = require("mongoose");
 
-var dbURI = "mongodb+srv://mekan32:mekan32@mekan32.qumvi.mongodb.net/mekan32?retryWrites=true&w=majority";
+var dbURI =
+  "mongodb+srv://mekan32:mekan32@mekan32.qumvi.mongodb.net/mekan32?retryWrites=true&w=majority";
 
-mongoose.connect(dbURI, { useNewUrlParser: true });
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 mongoose.connection.on("connected", function () {
   console.log("Mongoose " + dbURI + " adresindeki veritabanına bağlandı\n");
